@@ -49,6 +49,8 @@ pipeline{
          stage("deploy"){
             steps{
                 echo "deploying the code"
+                sh "docker stop flask-app || true"
+                sh "docker rm flask-app || true"
                 sh "docker run -d -p 80:80 flask-app:latest"
                 echo "deployed successfully"
              }
