@@ -50,6 +50,7 @@ pipeline{
             steps{
                 echo "deploying the code"
                 sh "docker run -d -p 80:80 flask-app:latest"
+                echo "deployed successfully"
              }
           }
  }
